@@ -1,9 +1,8 @@
-import Link from "next/link";
-import Image from "next/image";
-import { DUMMY_NEWS as news } from "@/data/dummy-news";
+import { getAllNews } from "@/lib/news";
 import NewsList from "@/components/NewsList";
 
-function NewsPage() {
+async function NewsPage() {
+  const news = await getAllNews();
   return (
     <>
       <h1>News Main</h1>
